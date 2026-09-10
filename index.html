@@ -79,7 +79,6 @@
   .skip-link{position:absolute;left:-999px;top:0;background:var(--pine);color:#fff;padding:.7rem 1rem;border-radius:0 0 10px 0;z-index:200}
   .skip-link:focus{left:0}
   .progress-bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--amber),var(--coral));z-index:150;transition:width .1s linear}
-  .sprite{position:absolute;width:0;height:0;overflow:hidden}
 
   /* header */
   .site-header{position:sticky;top:0;z-index:120;background:rgba(246,242,234,.82);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .3s ease,background .3s ease}
@@ -249,15 +248,13 @@
   .collage .wide img{aspect-ratio:16/8}
   .county-note{margin-top:22px;font-size:.9rem;color:var(--muted);max-width:60ch}
 
-  /* county crests */
-  .crest-wall{display:grid;gap:28px;margin-top:20px}
-  .crest-group h3{font-family:var(--sans);font-size:.76rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
-  .crest-row{display:flex;flex-wrap:wrap;gap:14px}
-  .crest{width:92px;text-align:center;color:var(--pine)}
-  .crest-badge{position:relative;width:60px;height:70px;margin:0 auto 8px;display:flex;align-items:center;justify-content:center}
-  .crest-badge svg{position:absolute;inset:0;width:100%;height:100%}
-  .crest-abbr{position:relative;font-family:var(--serif);font-weight:700;font-size:.82rem;letter-spacing:.02em}
-  .crest-name{display:block;font-size:.79rem;color:var(--text);line-height:1.25}
+  /* county list */
+  .county-list{display:grid;gap:26px;margin-top:20px}
+  .county-group h3{font-family:var(--sans);font-size:.76rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+  .county-links{display:flex;flex-wrap:wrap;gap:10px}
+  .county-links a{display:inline-flex;align-items:baseline;gap:6px;padding:.5rem 1rem;border:1px solid var(--line);border-radius:999px;background:var(--card);font-size:.92rem;font-weight:500;color:var(--forest);text-decoration:none;transition:background .2s ease,border-color .2s ease,transform .2s ease}
+  .county-links a::after{content:"\2197";font-size:.82em;opacity:.5}
+  .county-links a:hover{background:var(--pine);border-color:var(--pine);color:#fff;transform:translateY(-2px)}
 
   /* for this role */
   .fit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:6px}
@@ -330,14 +327,6 @@
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
-
-<svg class="sprite" aria-hidden="true" focusable="false">
-  <symbol id="shield" viewBox="0 0 60 70">
-    <path d="M5 5 H55 V38 C55 54 43 63 30 67 C17 63 5 54 5 38 Z" fill="none" stroke="currentColor" stroke-width="2.6"/>
-    <path d="M5 25 H55" stroke="currentColor" stroke-width="1.4" opacity=".45"/>
-    <path d="M30 5 V67" stroke="currentColor" stroke-width="1.4" opacity=".2"/>
-  </symbol>
-</svg>
 
 <header class="site-header" id="siteHeader">
   <div class="container header-inner">
@@ -672,53 +661,53 @@
     <h2 class="section-title reveal">19 counties, grouped by where the need is sharpest</h2>
     <p class="section-intro reveal">Worked with directly through County Directors of Education and delivery partners. Most sit in arid, semi-arid or otherwise marginalised areas under the national equalisation framework.</p>
 
-    <div class="crest-wall reveal">
-      <div class="crest-group">
+    <div class="county-list reveal">
+      <div class="county-group">
         <h3>Northern &amp; ASAL</h3>
-        <div class="crest-row">
-          <div class="crest"><span class="crest-badge"><svg><use href="#shield"/></svg><span class="crest-abbr">MAR</span></span><span class="crest-name">Marsabit</span></div>
-          <div class="crest"><span class="crest-badge"><svg><use href="#shield"/></svg><span class="crest-abbr">ISO</span></span><span class="crest-name">Isiolo</span></div>
-          <div class="crest"><span class="crest-badge"><svg><use href="#shield"/></svg><span class="crest-abbr">SAM</span></span><span class="crest-name">Samburu</span></div>
-          <div class="crest"><span class="crest-badge"><svg><use href="#shield"/></svg><span class="crest-abbr">GAR</span></span><span class="crest-name">Garissa</span></div>
+        <div class="county-links">
+          <a href="https://marsabit.go.ke/" target="_blank" rel="noopener">Marsabit</a>
+          <a href="https://isiolo.go.ke/" target="_blank" rel="noopener">Isiolo</a>
+          <a href="https://www.samburu.go.ke/" target="_blank" rel="noopener">Samburu</a>
+          <a href="https://garissa.go.ke/" target="_blank" rel="noopener">Garissa</a>
         </div>
       </div>
-      <div class="crest-group">
+      <div class="county-group">
         <h3>Rift Valley</h3>
-        <div class="crest-row">
-          <div class="crest"><span class="crest-badge"><svg><use href="#shield"/></svg><span class="crest-abbr">LAI</span></span><span class="crest-name">Laikipia</span></div>
-          <div class="crest"><span class="crest-badge"><svg><use href="#shield"/></svg><span class="crest-abbr">BAR</span></span><span class="crest-name">Baringo</span></div>
-          <div class="crest"><span class="crest-badge"><svg><use href="#shield"/></svg><span class="crest-abbr">WPK</span></span><span class="crest-name">West Pokot</span></div>
-          <div class="crest"><span class="crest-badge"><svg><use href="#shield"/></svg><span class="crest-abbr">EMA</span></span><span class="crest-name">Elgeyo Marakwet</span></div>
-          <div class="crest"><span class="crest-badge"><svg><use href="#shield"/></svg><span class="crest-abbr">NAK</span></span><span class="crest-name">Nakuru</span></div>
-          <div class="crest"><span class="crest-badge"><svg><use href="#shield"/></svg><span class="crest-abbr">NAR</span></span><span class="crest-name">Narok</span></div>
-          <div class="crest"><span class="crest-badge"><svg><use href="#shield"/></svg><span class="crest-abbr">KAJ</span></span><span class="crest-name">Kajiado</span></div>
+        <div class="county-links">
+          <a href="https://laikipia.go.ke/" target="_blank" rel="noopener">Laikipia</a>
+          <a href="https://baringo.go.ke/" target="_blank" rel="noopener">Baringo</a>
+          <a href="https://www.westpokot.go.ke/" target="_blank" rel="noopener">West Pokot</a>
+          <a href="https://elgeyomarakwet.go.ke/" target="_blank" rel="noopener">Elgeyo Marakwet</a>
+          <a href="https://www.nakuru.go.ke/" target="_blank" rel="noopener">Nakuru</a>
+          <a href="https://narok.go.ke/" target="_blank" rel="noopener">Narok</a>
+          <a href="https://www.kajiado.go.ke/" target="_blank" rel="noopener">Kajiado</a>
         </div>
       </div>
-      <div class="crest-group">
+      <div class="county-group">
         <h3>Coast</h3>
-        <div class="crest-row">
-          <div class="crest"><span class="crest-badge"><svg><use href="#shield"/></svg><span class="crest-abbr">KIL</span></span><span class="crest-name">Kilifi</span></div>
-          <div class="crest"><span class="crest-badge"><svg><use href="#shield"/></svg><span class="crest-abbr">LAM</span></span><span class="crest-name">Lamu</span></div>
+        <div class="county-links">
+          <a href="https://kilifi.go.ke/" target="_blank" rel="noopener">Kilifi</a>
+          <a href="https://lamu.go.ke/" target="_blank" rel="noopener">Lamu</a>
         </div>
       </div>
-      <div class="crest-group">
+      <div class="county-group">
         <h3>Nyanza &amp; Western</h3>
-        <div class="crest-row">
-          <div class="crest"><span class="crest-badge"><svg><use href="#shield"/></svg><span class="crest-abbr">KIS</span></span><span class="crest-name">Kisumu</span></div>
-          <div class="crest"><span class="crest-badge"><svg><use href="#shield"/></svg><span class="crest-abbr">SIA</span></span><span class="crest-name">Siaya</span></div>
-          <div class="crest"><span class="crest-badge"><svg><use href="#shield"/></svg><span class="crest-abbr">HMB</span></span><span class="crest-name">Homa Bay</span></div>
-          <div class="crest"><span class="crest-badge"><svg><use href="#shield"/></svg><span class="crest-abbr">VIH</span></span><span class="crest-name">Vihiga</span></div>
+        <div class="county-links">
+          <a href="https://www.kisumu.go.ke/" target="_blank" rel="noopener">Kisumu</a>
+          <a href="https://siaya.go.ke/siaya/" target="_blank" rel="noopener">Siaya</a>
+          <a href="https://homabay.go.ke/" target="_blank" rel="noopener">Homa Bay</a>
+          <a href="https://vihiga.go.ke/" target="_blank" rel="noopener">Vihiga</a>
         </div>
       </div>
-      <div class="crest-group">
+      <div class="county-group">
         <h3>Mt Kenya &amp; Lower Eastern</h3>
-        <div class="crest-row">
-          <div class="crest"><span class="crest-badge"><svg><use href="#shield"/></svg><span class="crest-abbr">MER</span></span><span class="crest-name">Meru</span></div>
-          <div class="crest"><span class="crest-badge"><svg><use href="#shield"/></svg><span class="crest-abbr">MCK</span></span><span class="crest-name">Machakos</span></div>
+        <div class="county-links">
+          <a href="https://meru.go.ke/" target="_blank" rel="noopener">Meru</a>
+          <a href="https://machakos.go.ke/" target="_blank" rel="noopener">Machakos</a>
         </div>
       </div>
     </div>
-    <p class="county-note">Crests shown as a consistent placeholder mark. Official county emblems can be added where an engagement is on record.</p>
+    <p class="county-note">Each county links to its official county government website. Worked with through the County Directors of Education and delivery partners.</p>
   </div>
 </section>
 
