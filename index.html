@@ -187,10 +187,21 @@
   /* logo wall */
   .wall-head{margin-top:clamp(44px,6vw,66px);font-family:var(--sans);font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
   .logowall{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}
-  .logo-tile{display:flex;flex-direction:column;align-items:center;gap:11px;padding:22px 14px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);text-align:center;transition:filter .25s ease,opacity .25s ease,transform .25s ease;filter:grayscale(1);opacity:.85}
-  .logo-tile:hover{filter:none;opacity:1;transform:translateY(-3px)}
-  .logo-mark{width:54px;height:54px;border-radius:15px;background:var(--pine);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:700;font-size:.95rem;letter-spacing:.02em}
-  .logo-mark.a2{background:var(--teal)} .logo-mark.a3{background:var(--coral);color:#3a2410} .logo-mark.a4{background:#3d5a53}
+  .logo-tile{display:flex;flex-direction:column;align-items:center;gap:12px;padding:20px 16px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);text-align:center;min-height:152px;transition:transform .25s ease,box-shadow .25s ease}
+  .logo-tile:hover{transform:translateY(-3px);box-shadow:0 16px 34px -22px rgba(10,42,36,.5)}
+  .logo-slot{width:100%;height:66px;display:flex;align-items:center;justify-content:center}
+  .logo-img{max-width:100%;max-height:66px;width:auto;height:auto;object-fit:contain;display:none}
+  .logo-tile.hasimg .logo-img{display:block}
+  .logo-tile.hasimg .logo-mark{display:none}
+  .logo-mark{min-width:64px;height:56px;padding:0 16px;border-radius:14px;background:var(--pine);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:700;font-size:1.05rem;letter-spacing:.01em;white-space:nowrap}
+  .logo-mark[data-b="unicef"]{background:#1CABE2}
+  .logo-mark[data-b="lego"]{background:#E3000B}
+  .logo-mark[data-b="ubongo"]{background:#0098DA}
+  .logo-mark[data-b="ict"]{background:#0A7D33}
+  .logo-mark[data-b="kenia"]{background:#12508F}
+  .logo-mark[data-b="acih"]{background:#2E5EAA}
+  .logo-mark[data-b="edtech"]{background:#2AA6A6}
+  .logo-mark[data-b="hpf"]{background:#141414}
   .logo-name{font-size:.8rem;color:var(--muted);line-height:1.32}
   .wall-note{margin-top:14px;font-size:.82rem;color:var(--muted)}
 
@@ -509,16 +520,16 @@
 
     <p class="wall-head reveal">Delivery and ecosystem partners</p>
     <div class="logowall reveal">
-      <div class="logo-tile"><span class="logo-mark">UN</span><span class="logo-name">UNICEF</span></div>
-      <div class="logo-tile"><span class="logo-mark a2">LF</span><span class="logo-name">The LEGO Foundation</span></div>
-      <div class="logo-tile"><span class="logo-mark a3">U</span><span class="logo-name">Ubongo</span></div>
-      <div class="logo-tile"><span class="logo-mark a4">ICT</span><span class="logo-name">ICT Authority, Kenya</span></div>
-      <div class="logo-tile"><span class="logo-mark a2">Ke</span><span class="logo-name">Kenya National Innovation Agency</span></div>
-      <div class="logo-tile"><span class="logo-mark">KA</span><span class="logo-name">Kenya Association of Innovation Hubs</span></div>
-      <div class="logo-tile"><span class="logo-mark a3">EA</span><span class="logo-name">EdTech East Africa</span></div>
-      <div class="logo-tile"><span class="logo-mark a4">HP</span><span class="logo-name">Human Practice Foundation</span></div>
+      <div class="logo-tile"><span class="logo-slot"><img class="logo-img" src="assets/logos/unicef.png" alt="UNICEF logo" loading="lazy" onload="this.closest('.logo-tile').classList.add('hasimg')" onerror="if(!this.dataset.s){this.dataset.s=1;this.src=this.src.replace(/\.png$/,'.svg')}else{this.remove()}"><span class="logo-mark" data-b="unicef">unicef</span></span><span class="logo-name">UNICEF</span></div>
+      <div class="logo-tile"><span class="logo-slot"><img class="logo-img" src="assets/logos/lego-foundation.png" alt="The LEGO Foundation logo" loading="lazy" onload="this.closest('.logo-tile').classList.add('hasimg')" onerror="if(!this.dataset.s){this.dataset.s=1;this.src=this.src.replace(/\.png$/,'.svg')}else{this.remove()}"><span class="logo-mark" data-b="lego">LEGO</span></span><span class="logo-name">The LEGO Foundation</span></div>
+      <div class="logo-tile"><span class="logo-slot"><img class="logo-img" src="assets/logos/ubongo.png" alt="Ubongo logo" loading="lazy" onload="this.closest('.logo-tile').classList.add('hasimg')" onerror="if(!this.dataset.s){this.dataset.s=1;this.src=this.src.replace(/\.png$/,'.svg')}else{this.remove()}"><span class="logo-mark" data-b="ubongo">ubongo</span></span><span class="logo-name">Ubongo</span></div>
+      <div class="logo-tile"><span class="logo-slot"><img class="logo-img" src="assets/logos/ict-authority.png" alt="ICT Authority Kenya logo" loading="lazy" onload="this.closest('.logo-tile').classList.add('hasimg')" onerror="if(!this.dataset.s){this.dataset.s=1;this.src=this.src.replace(/\.png$/,'.svg')}else{this.remove()}"><span class="logo-mark" data-b="ict">ICT</span></span><span class="logo-name">ICT Authority, Kenya</span></div>
+      <div class="logo-tile"><span class="logo-slot"><img class="logo-img" src="assets/logos/kenia.png" alt="Kenya National Innovation Agency logo" loading="lazy" onload="this.closest('.logo-tile').classList.add('hasimg')" onerror="if(!this.dataset.s){this.dataset.s=1;this.src=this.src.replace(/\.png$/,'.svg')}else{this.remove()}"><span class="logo-mark" data-b="kenia">KeNIA</span></span><span class="logo-name">Kenya National Innovation Agency</span></div>
+      <div class="logo-tile"><span class="logo-slot"><img class="logo-img" src="assets/logos/innovation-hubs.png" alt="Association of Countrywide Innovation Hubs logo" loading="lazy" onload="this.closest('.logo-tile').classList.add('hasimg')" onerror="if(!this.dataset.s){this.dataset.s=1;this.src=this.src.replace(/\.png$/,'.svg')}else{this.remove()}"><span class="logo-mark" data-b="acih">ACIH</span></span><span class="logo-name">Association of Countrywide Innovation Hubs</span></div>
+      <div class="logo-tile"><span class="logo-slot"><img class="logo-img" src="assets/logos/edtech-east-africa.png" alt="EdTech East Africa logo" loading="lazy" onload="this.closest('.logo-tile').classList.add('hasimg')" onerror="if(!this.dataset.s){this.dataset.s=1;this.src=this.src.replace(/\.png$/,'.svg')}else{this.remove()}"><span class="logo-mark" data-b="edtech">EdTech</span></span><span class="logo-name">EdTech East Africa</span></div>
+      <div class="logo-tile"><span class="logo-slot"><img class="logo-img" src="assets/logos/human-practice-foundation.png" alt="Human Practice Foundation logo" loading="lazy" onload="this.closest('.logo-tile').classList.add('hasimg')" onerror="if(!this.dataset.s){this.dataset.s=1;this.src=this.src.replace(/\.png$/,'.svg')}else{this.remove()}"><span class="logo-mark" data-b="hpf">HPF</span></span><span class="logo-name">Human Practice Foundation</span></div>
     </div>
-    <p class="wall-note reveal">Monograms shown as placeholders. Official partner logos can be dropped in where a working relationship is on record.</p>
+    <p class="wall-note reveal">Add official partner logos as <code>assets/logos/&lt;name&gt;.png</code> or <code>.svg</code>. Until a file is present, a brand-coloured monogram stands in.</p>
   </div>
 </section>
 
